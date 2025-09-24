@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>天星AI - 企业级AI应用专家</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/lucide-react@latest/dist/umd/lucide.min.js" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel='icon' href='favicon.png' type='image/png'>
+    <link rel="canonical" href="https://allinagi.com.cn/">
+    <meta name="description" content="天星AI为企业提供AI通识培训、企业级AI咨询与私有化部署、AI短剧制作等一站式服务，助力效率提升与增长。">
+    <meta name="keywords" content="企业级AI, AI培训, AI咨询, 私有化部署, 企业智脑, AI短剧制作">
+    <meta property="og:site_name" content="天星AI">
+    <meta property="og:title" content="天星AI - 企业级AI应用专家">
+    <meta property="og:description" content="企业AI培训、咨询与私有化部署，AI短剧制作与真实案例，助力效率提升与业务增长。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://allinagi.com.cn/">
+    <meta property="og:image" content="https://allinagi.com.cn/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "name": "天星AI",
+                    "url": "https://allinagi.com.cn/",
+                    "logo": "https://allinagi.com.cn/favicon.png",
+                    "contactPoint": [
+                        {
+                            "@type": "ContactPoint",
+                            "telephone": "+86-13141305408",
+                            "contactType": "sales",
+                            "areaServed": "CN",
+                            "availableLanguage": ["zh-CN", "en"]
+                        }
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "天星AI官网",
+                    "url": "https://allinagi.com.cn/",
+                    "inLanguage": "zh-CN",
+                    "potentialAction": [
+                        {
+                            "@type": "SearchAction",
+                            "target": "https://www.baidu.com/s?wd={search_term_string}",
+                            "query-input": "required name=search_term_string"
+                        }
+                    ]
+                },
+                {
+                    "@type": "Service",
+                    "name": "企业级AI咨询",
+                    "serviceType": "Consulting",
+                    "provider": { "@type": "Organization", "name": "天星AI", "url": "https://allinagi.com.cn/" },
+                    "areaServed": "CN",
+                    "url": "https://allinagi.com.cn/#core-services"
+                },
+                {
+                    "@type": "Service",
+                    "name": "AI私有化部署",
+                    "serviceType": "Deployment",
+                    "provider": { "@type": "Organization", "name": "天星AI", "url": "https://allinagi.com.cn/" },
+                    "areaServed": "CN",
+                    "url": "https://allinagi.com.cn/#core-services"
+                },
+                {
+                    "@type": "Service",
+                    "name": "AI短剧制作",
+                    "serviceType": "Production",
+                    "provider": { "@type": "Organization", "name": "天星AI", "url": "https://allinagi.com.cn/" },
+                    "areaServed": "CN",
+                    "url": "https://allinagi.com.cn/ai-drama.html"
+                },
+                {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "企业如何快速落地AI提升效率？",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "从团队AI通识培训切入，结合业务场景定制应用，并在合规框架内逐步私有化部署。"
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "AI短剧制作的优势是什么？",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "相比传统方式成本可降低约70%，制作效率提升至3倍，适合品牌传播与转化。"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "陈星",
+            "jobTitle": "创始人 / 合伙人",
+            "url": "https://allinagi.com.cn/#instructor",
+            "image": "https://allinagi.com.cn/instructor.jpg",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "天星AI",
+                "url": "https://allinagi.com.cn/"
+            },
+            "knowsAbout": ["企业级AI咨询", "AI私有化部署", "AI通识培训", "AI短剧制作"],
+            "nationality": "CN",
+            "sameAs": ["https://allinagi.com.cn/"]
+        }
+    </script>
+</head>
+<body class="antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+<!-- 防止页面缩放 -->
+<script>
+    window.addEventListener("wheel", (e)=> {
+        const isPinching = e.ctrlKey
+        if(isPinching) e.preventDefault()
+    }, { passive: false })
+</script>
+
+<!-- 导航栏 -->
+<nav class="fixed w-full border-b border-gray-100 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 transition-colors duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center space-x-2">
+                <div class="text-xl font-medium tracking-tight font-geist-mono">
+                    <span class="text-blue-600 dark:text-blue-400">天星</span><span>AI</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#instructor" class="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span class="lang-zh">公司简介</span>
+                    <span class="lang-en" style="display:none">About</span>
+                    <span class="lang-ja" style="display:none">会社概要</span>
+                </a>
+                <a href="#offline-activities" class="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span class="lang-zh">AI通识培训</span>
+                    <span class="lang-en" style="display:none">AI Training</span>
+                    <span class="lang-ja" style="display:none">AIトレーニング</span>
+                </a>
+                <a href="#core-services" class="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span class="lang-zh">私有化部署</span>
+                    <span class="lang-en" style="display:none">Private Deployment</span>
+                    <span class="lang-ja" style="display:none">プライベート導入</span>
+                </a>
+                <a href="#core-services" class="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span class="lang-zh">企业级AI咨询</span>
+                    <span class="lang-en" style="display:none">AI Consulting</span>
+                    <span class="lang-ja" style="display:none">AIコンサルティング</span>
+                </a>
+                <a href="ai-drama.html" class="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span class="lang-zh">AI短剧制作</span>
+                    <span class="lang-en" style="display:none">AI Drama Production</span>
+                    <span class="lang-ja" style="display:none">AIドラマ制作</span>
+                </a>
+                <a href="#news" class="text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span class="lang-zh">行业资讯</span>
+                    <span class="lang-en" style="display:none">Industry News</span>
+                    <span class="lang-ja" style="display:none">業界ニュース</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon dark:hidden"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun hidden dark:block"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                </button>
+                <div class="relative">
+                    <select id="lang-select" class="p-2 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                    </select>
+                </div>
+                <a href="#contact" class="hidden md:block px-4 py-2 text-sm bg-blue-600 dark:bg-blue-500 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-all transform hover:scale-105 duration-300">
+                    <span class="lang-zh">联系咨询</span>
+                    <span class="lang-en" style="display:none">Contact</span>
+                    <span class="lang-ja" style="display:none">お問い合わせ</span>
+                </a>
+                <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-100 dark:border-gray-800">
+            <a href="#instructor" class="block px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+                <span class="lang-zh">公司简介</span>
+                <span class="lang-en" style="display:none">About</span>
+                <span class="lang-ja" style="display:none">会社概要</span>
+            </a>
+            <a href="#offline-activities" class="block px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+                <span class="lang-zh">AI通识培训</span>
+                <span class="lang-en" style="display:none">AI Training</span>
+                <span class="lang-ja" style="display:none">AIトレーニング</span>
+            </a>
+            <a href="#core-services" class="block px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+                <span class="lang-zh">私有化部署</span>
+                <span class="lang-en" style="display:none">Private Deployment</span>
+                <span class="lang-ja" style="display:none">プライベート導入</span>
+            </a>
+            <a href="#core-services" class="block px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+                <span class="lang-zh">企业级AI咨询</span>
+                <span class="lang-en" style="display:none">AI Consulting</span>
+                <span class="lang-ja" style="display:none">AIコンサルティング</span>
+            </a>
+            <a href="ai-drama.html" class="block px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+                <span class="lang-zh">AI短剧制作</span>
+                <span class="lang-en" style="display:none">AI Drama Production</span>
+                <span class="lang-ja" style="display:none">AIドラマ制作</span>
+            </a>
+            <a href="#contact" class="block px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors">
+                <span class="lang-zh">联系我们</span>
+                <span class="lang-en" style="display:none">Contact Us</span>
+                <span class="lang-ja" style="display:none">お問い合わせ</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- 英雄区域 -->
+<section class="pt-24 pb-10 md:pt-28 md:pb-16 overflow-hidden bg-gradient-to-r from-gray-900 via-blue-900 to-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:pr-12">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-white">
+                    <span class="lang-zh">让AI真正为企业工作</span>
+                    <span class="lang-en" style="display:none">Make AI Really Work for Enterprises</span>
+                    <span class="lang-ja" style="display:none">AIを企業のために真に働かせる</span>
+                </h1>
+                <p class="text-lg text-gray-200 mb-4 leading-relaxed">
+                    <span class="lang-zh">让您的团队用好AI，让您的业务因AI而强。</span>
+                    <span class="lang-en" style="display:none">Help your team use AI well, make your business stronger with AI.</span>
+                    <span class="lang-ja" style="display:none">チームがAIを上手に活用し、ビジネスをAIで強化します。</span>
+                </p>
+                <!-- 成果数据展示 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-300 mb-1">
+                            <span class="lang-zh">3000+</span>
+                            <span class="lang-en" style="display:none">3000+</span>
+                            <span class="lang-ja" style="display:none">3000+</span>
+                        </div>
+                        <div class="text-sm text-gray-300">
+                            <span class="lang-zh">培训学员</span>
+                            <span class="lang-en" style="display:none">Trained Students</span>
+                            <span class="lang-ja" style="display:none">研修受講者</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-300 mb-1">
+                            <span class="lang-zh">50+</span>
+                            <span class="lang-en" style="display:none">50+</span>
+                            <span class="lang-ja" style="display:none">50+</span>
+                        </div>
+                        <div class="text-sm text-gray-300">
+                            <span class="lang-zh">服务企业</span>
+                            <span class="lang-en" style="display:none">Enterprise Clients</span>
+                            <span class="lang-ja" style="display:none">サービス企業</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-300 mb-1">
+                            <span class="lang-zh">40%</span>
+                            <span class="lang-en" style="display:none">40%</span>
+                            <span class="lang-ja" style="display:none">40%</span>
+                        </div>
+                        <div class="text-sm text-gray-300">
+                            <span class="lang-zh">效率提升</span>
+                            <span class="lang-en" style="display:none">Efficiency Boost</span>
+                            <span class="lang-ja" style="display:none">効率向上</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-300 mb-1">
+                            <span class="lang-zh">13年</span>
+                            <span class="lang-en" style="display:none">13 Years</span>
+                            <span class="lang-ja" style="display:none">13年</span>
+                        </div>
+                        <div class="text-sm text-gray-300">
+                            <span class="lang-zh">行业经验</span>
+                            <span class="lang-en" style="display:none">Industry Experience</span>
+                            <span class="lang-ja" style="display:none">業界経験</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-6">
+                    <a href="#core-services" class="px-8 py-4 bg-blue-600 text-white rounded-lg text-base font-semibold shadow-lg hover:bg-blue-700 transition-all transform hover:scale-105">
+                        <span class="lang-zh">了解解决方案</span>
+                        <span class="lang-en" style="display:none">Explore Solutions</span>
+                        <span class="lang-ja" style="display:none">ソリューションを見る</span>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border border-gray-300 rounded-lg text-base font-semibold text-white hover:bg-gray-800 transition-all">
+                        <span class="lang-zh">咨询专家</span>
+                        <span class="lang-en" style="display:none">Contact Expert</span>
+                        <span class="lang-ja" style="display:none">専門家に相談</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 客户案例展示 -->
+            <div class="mt-16">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-blue-200 dark:border-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold text-lg">A</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-base text-gray-800 dark:text-white">
+                                    <span class="lang-zh">某电商公司</span>
+                                    <span class="lang-en" style="display:none">E-commerce Company</span>
+                                    <span class="lang-ja" style="display:none">ECサイト企業</span>
+                                </h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                    <span class="lang-zh">市场部门</span>
+                                    <span class="lang-en" style="display:none">Marketing Dept</span>
+                                    <span class="lang-ja" style="display:none">マーケティング部</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                                <span class="lang-zh">"通过AI文案写作培训，我们的产品描述撰写效率提升了60%，转化率也有明显改善。"</span>
+                                <span class="lang-en" style="display:none">"AI copywriting training improved our product description efficiency by 60% with better conversion rates."</span>
+                                <span class="lang-ja" style="display:none">"AIコピーライティング研修により、商品説明の作成効率が60%向上し、コンバージョン率も明らかに改善されました。"</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">成果指标</span>
+                            <div class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <span class="lang-zh">效率提升 60%</span>
+                                <span class="lang-en" style="display:none">+60% Efficiency</span>
+                                <span class="lang-ja" style="display:none">効率向上 60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-green-200 dark:border-green-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold text-lg">B</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-base text-gray-800 dark:text-white">
+                                    <span class="lang-zh">设计工作室</span>
+                                    <span class="lang-en" style="display:none">Design Studio</span>
+                                    <span class="lang-ja" style="display:none">デザインスタジオ</span>
+                                </h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                    <span class="lang-zh">创意团队</span>
+                                    <span class="lang-en" style="display:none">Creative Team</span>
+                                    <span class="lang-ja" style="display:none">クリエイティブチーム</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                                <span class="lang-zh">"AI设计培训让我们的设计师能够快速产出创意方案，项目交付周期缩短了40%。"</span>
+                                <span class="lang-en" style="display:none">"AI design training enabled our designers to rapidly generate creative solutions, reducing project delivery time by 40%."</span>
+                                <span class="lang-ja" style="display:none">"AIデザイン研修により、デザイナーが迅速にクリエイティブなソリューションを生み出せるようになり、プロジェクトの納期が40%短縮されました。"</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">成果指标</span>
+                            <div class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <span class="lang-zh">周期缩短 40%</span>
+                                <span class="lang-en" style="display:none">-40% Delivery</span>
+                                <span class="lang-ja" style="display:none">納期短縮 40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-purple-200 dark:border-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-violet-500"></div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold text-lg">C</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-base text-gray-800 dark:text-white">
+                                    <span class="lang-zh">科技公司</span>
+                                    <span class="lang-en" style="display:none">Tech Company</span>
+                                    <span class="lang-ja" style="display:none">テクノロジー企業</span>
+                                </h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                    <span class="lang-zh">运营部门</span>
+                                    <span class="lang-en" style="display:none">Operations Dept</span>
+                                    <span class="lang-ja" style="display:none">運営部門</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                                <span class="lang-zh">"Agent自动化培训帮助我们搭建了客服机器人，客户响应时间从小时级降到分钟级。"</span>
+                                <span class="lang-en" style="display:none">"Agent automation training helped us build customer service bots, reducing response time from hours to minutes."</span>
+                                <span class="lang-ja" style="display:none">"エージェント自動化研修により、カスタマーサービスボットを構築し、顧客対応时间を時間単位から分単位に短縮できました。"</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">成果指标</span>
+                            <div class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <span class="lang-zh">小时→分钟</span>
+                                <span class="lang-en" style="display:none">Hours→Minutes</span>
+                                <span class="lang-ja" style="display:none">時間→分</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-red-200 dark:border-red-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-orange-500"></div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white font-bold text-lg">D</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-base text-gray-800 dark:text-white">
+                                    <span class="lang-zh">影视公司</span>
+                                    <span class="lang-en" style="display:none">Media Company</span>
+                                    <span class="lang-ja" style="display:none">映像制作会社</span>
+                                </h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                    <span class="lang-zh">AI短剧制作</span>
+                                    <span class="lang-en" style="display:none">AI Drama Production</span>
+                                    <span class="lang-ja" style="display:none">AIドラマ制作</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-4">
+                            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                                <span class="lang-zh">"AI短剧制作流程让我们的创作效率提升了300%，从剧本到成片只需要传统方式1/3的时间。"</span>
+                                <span class="lang-en" style="display:none">"AI drama production workflow increased our creative efficiency by 300%, reducing time from script to final product to 1/3 of traditional methods."</span>
+                                <span class="lang-ja" style="display:none">"AIドラマ制作ワークフローにより創作効率が300%向上し、脚本から完成品まで従来の1/3の時間で完成できるようになりました。"</span>
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">成果指标</span>
+                            <div class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <span class="lang-zh">效率 +300%</span>
+                                <span class="lang-en" style="display:none">Efficiency +300%</span>
+                                <span class="lang-ja" style="display:none">効率 +300%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 分割线 -->
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="border-t border-gray-100 dark:border-gray-800"></div>
+</div>
+
+<!-- TL;DR + FAQ（AEO可见内容） -->
+<section id="tldr" class="py-10 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-6 md:p-8 shadow-sm">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">TL;DR 要点摘要</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">企业落地AI的三步法：培训 → 业务场景应用 → 私有化部署；品牌增长可用“AI短剧+教育内容”组合快速起量。</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 rounded-lg bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700">
+                        <h3 class="font-semibold mb-2">企业AI通识培训</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">面向团队的系统培训与实操演练，1-2周见效，效率常见提升30%+</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700">
+                        <h3 class="font-semibold mb-2">场景化落地与咨询</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">聚焦营销、运营、客服等高ROI场景，提供方法论+实施路线</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-700">
+                        <h3 class="font-semibold mb-2">私有化与数据安全</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">模型与数据在内网运行，多级权限合规可控，7×24技术支持</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">常见问题</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">Q：企业如何快速用好AI？</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">A：先做通识培训建立统一方法，再选1-2个高价值场景试点，最后规范化部署到更多部门。</p>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800 dark:text-gray-200">Q：AI短剧适合哪些业务？</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">A：用于品牌教育、产品说明与线索转化，成本较传统方式可降约70%，制作效率提升至3倍。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-4 border border-gray-100 dark:border-gray-700">
+                        <h3 class="text-lg font-semibold mb-3">快速入口</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-semibold hover:bg-blue-700 transition">联系咨询</a>
+                            <a href="ai-drama.html" class="px-4 py-2 bg-orange-600 text-white rounded-md text-sm font-semibold hover:bg-orange-700 transition">查看AI短剧</a>
+                            <a href="企业智脑demo.html" class="px-4 py-2 bg-gray-900 text-white rounded-md text-sm font-semibold hover:bg-gray-800 transition">企业智脑Demo</a>
+                            <a href="industry-ecommerce.html" class="px-4 py-2 bg-emerald-600 text-white rounded-md text-sm font-semibold hover:bg-emerald-700 transition">电商方案</a>
+                            <a href="industry-manufacturing.html" class="px-4 py-2 bg-violet-600 text-white rounded-md text-sm font-semibold hover:bg-violet-700 transition">制造方案</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 dark:text-gray-500">注：更多行业落地模板与案例可按需提供，支持定制演示。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- 讲师介绍 -->
+<section id="instructor" class="py-8 bg-gradient-to-r from-gray-100 to-blue-50 dark:bg-gray-800/30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color: #000000;">
+                <span class="lang-zh">创始人介绍</span>
+                <span class="lang-en" style="display:none">Instructor</span>
+                <span class="lang-ja" style="display:none">講師紹介</span>
+            </h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto mb-4"></div>
+        </div>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-700 overflow-hidden shadow-sm">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/3 bg-gradient-to-br from-blue-500 to-indigo-600 p-6 flex flex-col justify-center items-center">
+                        <div class="w-32 h-32 rounded-full bg-white dark:bg-gray-800 border-4 border-white dark:border-gray-800 overflow-hidden flex items-center justify-center mb-4">
+                            <img src="instructor.jpg" alt="陈星讲师" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1 font-geist-mono">
+                            <span class="lang-zh">陈星</span>
+                            <span class="lang-en" style="display:none">Chen Xing</span>
+                            <span class="lang-ja" style="display:none">陳星</span>
+                        </h3>
+                        <p class="text-blue-100 text-sm">
+                            <span class="lang-zh">创始人 / 合伙人</span>
+                            <span class="lang-en" style="display:none">Founder / Partner</span>
+                            <span class="lang-ja" style="display:none">創業者 / パートナー</span>
+                        </p>
+                    </div>
+                    <div class="w-full md:w-2/3 p-6">
+                        <div class="flex flex-col h-full justify-between">
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs lang-zh">企业级AI咨询专家</span>
+                                    <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs lang-en" style="display:none">Enterprise AI Consulting Expert</span>
+                                    <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs lang-zh">数字化解决方案专家</span>
+                                    <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs lang-en" style="display:none">Digital Solution Specialist</span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                                    <span class="lang-zh">陈星先生是天星AI创始人，拥有十三年数字化解决方案经验，曾任新浪VR总经理。目前同时担任北京试看科技有限公司合伙人及北京绿茵天地体育产业股份有限公司AI顾问，专注于企业级AI技术落地应用与咨询服务。</span>
+                                    <span class="lang-en" style="display:none">Mr. Chen Xing is the founder of SkyStar AI, with 13 years of experience in digital solutions. Former General Manager of Sina VR, currently a partner at Beijing Shikan Technology and AI consultant for Greenfield Sports. He specializes in enterprise AI implementation and consulting.</span>
+                                    <span class="lang-ja" style="display:none">陳星氏は、天星AIの創業者であり、13年のデジタルソリューションの経験を持ち、新浪VRの前ジェネラルマンジャーを務めています。現在、北京試看科技有限公司と北京緑茵天地体育産業株式会社のAIアドバイザーとして、企業向けAI実装とコンサルティングに専門的に従事しています。</span>
+                                </p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <a href="#contact" class="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    联系咨询
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 分割线 -->
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="border-t border-gray-100 dark:border-gray-800"></div>
+</div>
+
+
+
+<!-- 核心业务服务 -->
+<section id="core-services" class="py-12 bg-gradient-to-r from-gray-100 to-blue-50 dark:bg-gray-800/30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #000000;">
+                <span class="lang-zh">核心业务服务</span>
+                <span class="lang-en" style="display:none">Core Business Services</span>
+                <span class="lang-ja" style="display:none">コアビジネスサービス</span>
+            </h2>
+            <div class="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                <span class="lang-zh">提供全方位的企业级AI解决方案，从培训到部署，从咨询到内容制作，助力企业实现智能化转型</span>
+                <span class="lang-en" style="display:none">Comprehensive enterprise AI solutions from training to deployment, consulting to content creation, empowering intelligent transformation</span>
+                <span class="lang-ja" style="display:none">研修から導入、コンサルティングからコンテンツ制作まで、包括的な企業向けAIソリューションでインテリジェント変革を支援</span>
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- AI通识培训 -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap text-blue-600 dark:text-blue-400"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-zh">AI通识培训</span>
+                            <span class="lang-en" style="display:none">AI General Training</span>
+                            <span class="lang-ja" style="display:none">AI一般研修</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span class="lang-zh">企业员工AI技能提升</span>
+                            <span class="lang-en" style="display:none">Employee AI Skills Enhancement</span>
+                            <span class="lang-ja" style="display:none">従業員AIスキル向上</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <span class="lang-zh">专业的企业AI培训解决方案，帮助企业员工快速掌握AI工具使用技能，基于实际业务场景进行定制化培训，提升工作效率和创新能力。</span>
+                    <span class="lang-en" style="display:none">Professional enterprise AI training solutions to help employees quickly master AI tool skills with customized training based on real business scenarios.</span>
+                    <span class="lang-ja" style="display:none">専門的な企業AI研修ソリューションで、実際の業務シーンに基づいたカスタマイズ研修により、従業員のAIツールスキルを迅速に向上させます。</span>
+                </p>
+                <ul class="text-gray-600 dark:text-gray-400 text-sm space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">定制化培训课程设计</span>
+                        <span class="lang-en" style="display:none">Customized training course design</span>
+                        <span class="lang-ja" style="display:none">カスタマイズ研修コース設計</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">实际业务场景应用</span>
+                        <span class="lang-en" style="display:none">Real business scenario applications</span>
+                        <span class="lang-ja" style="display:none">実際の業務シーン応用</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">持续跟踪与支持</span>
+                        <span class="lang-en" style="display:none">Continuous tracking and support</span>
+                        <span class="lang-ja" style="display:none">継続的な追跡とサポート</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all">
+                    <span class="lang-zh">获取培训方案</span>
+                    <span class="lang-en" style="display:none">Get Training Plan</span>
+                    <span class="lang-ja" style="display:none">研修プランを取得</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- 私有化部署 -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield text-green-600 dark:text-green-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-zh">私有化部署</span>
+                            <span class="lang-en" style="display:none">Private Deployment</span>
+                            <span class="lang-ja" style="display:none">プライベート導入</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span class="lang-zh">安全可靠的本地化AI解决方案</span>
+                            <span class="lang-en" style="display:none">Secure Local AI Solutions</span>
+                            <span class="lang-ja" style="display:none">安全なローカルAIソリューション</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <span class="lang-zh">提供完整的本地化AI部署方案，确保企业数据安全与业务连续性。支持多种开源大模型部署，提供定制化配置和专业技术支持。</span>
+                    <span class="lang-en" style="display:none">Complete localized AI deployment solutions ensuring enterprise data security and business continuity with support for various open-source models.</span>
+                    <span class="lang-ja" style="display:none">企業のデータセキュリティとビジネス継続性を確保する完全なローカルAI導入ソリューション、様々なオープンソースモデルをサポート。</span>
+                </p>
+                <ul class="text-gray-600 dark:text-gray-400 text-sm space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">数据全程不出内网</span>
+                        <span class="lang-en" style="display:none">Data never leaves intranet</span>
+                        <span class="lang-ja" style="display:none">データが社内ネットワークから出ない</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">多级权限控制系统</span>
+                        <span class="lang-en" style="display:none">Multi-level permission control</span>
+                        <span class="lang-ja" style="display:none">多層権限制御システム</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">7×24小时技术支持</span>
+                        <span class="lang-en" style="display:none">24/7 technical support</span>
+                        <span class="lang-ja" style="display:none">24時間365日技術サポート</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all">
+                    <span class="lang-zh">获取部署方案</span>
+                    <span class="lang-en" style="display:none">Get Deployment Plan</span>
+                    <span class="lang-ja" style="display:none">導入プランを取得</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- 企业级AI咨询 -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb text-purple-600 dark:text-purple-400"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-zh">企业级AI咨询</span>
+                            <span class="lang-en" style="display:none">Enterprise AI Consulting</span>
+                            <span class="lang-ja" style="display:none">企業向けAIコンサルティング</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span class="lang-zh">AI战略规划与实施指导</span>
+                            <span class="lang-en" style="display:none">AI Strategy Planning & Implementation</span>
+                            <span class="lang-ja" style="display:none">AI戦略計画と実施指導</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <span class="lang-zh">专业AI战略规划与实施指导，助力企业实现数字化转型与智能化升级。从业务分析到技术选型，提供全方位的咨询服务。</span>
+                    <span class="lang-en" style="display:none">Professional AI strategy planning and implementation guidance to help enterprises achieve digital transformation and intelligent upgrades.</span>
+                    <span class="lang-ja" style="display:none">専門的なAI戦略計画と実施指導で、企業のデジタル変革とインテリジェント化アップグレードを支援します。</span>
+                </p>
+                <ul class="text-gray-600 dark:text-gray-400 text-sm space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">AI战略规划制定</span>
+                        <span class="lang-en" style="display:none">AI strategy planning</span>
+                        <span class="lang-ja" style="display:none">AI戦略計画策定</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">技术选型与架构设计</span>
+                        <span class="lang-en" style="display:none">Technology selection & architecture design</span>
+                        <span class="lang-ja" style="display:none">技術選定とアーキテクチャ設計</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">实施路径与风险评估</span>
+                        <span class="lang-en" style="display:none">Implementation roadmap & risk assessment</span>
+                        <span class="lang-ja" style="display:none">実施ロードマップとリスク評価</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all">
+                    <span class="lang-zh">获取咨询方案</span>
+                    <span class="lang-en" style="display:none">Get Consulting Plan</span>
+                    <span class="lang-ja" style="display:none">コンサルティングプランを取得</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- AI短剧制作 -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video text-orange-600 dark:text-orange-400"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">
+                            <span class="lang-zh">AI短剧制作</span>
+                            <span class="lang-en" style="display:none">AI Drama Production</span>
+                            <span class="lang-ja" style="display:none">AIドラマ制作</span>
+                        </h3>
+                        <p class="text-sm text-gray-500">
+                            <span class="lang-zh">专业AI内容创作平台</span>
+                            <span class="lang-en" style="display:none">Professional AI Content Creation</span>
+                            <span class="lang-ja" style="display:none">プロフェッショナルAIコンテンツ制作</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                    <span class="lang-zh">专业的AI短剧制作团队与内容生产平台，提供从剧本创作到视频生成的一站式服务，大幅降低制作成本，提升内容创作效率。</span>
+                    <span class="lang-en" style="display:none">Professional AI drama production team and content platform, providing one-stop services from script creation to video generation.</span>
+                    <span class="lang-ja" style="display:none">プロフェッショナルなAIドラマ制作チームとコンテンツプラットフォーム、脚本作成から動画生成まで一貫したサービスを提供。</span>
+                </p>
+                <ul class="text-gray-600 dark:text-gray-400 text-sm space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">AI剧本创作与对话生成</span>
+                        <span class="lang-en" style="display:none">AI script creation & dialogue generation</span>
+                        <span class="lang-ja" style="display:none">AI脚本作成と対話生成</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">角色设计与场景构建</span>
+                        <span class="lang-en" style="display:none">Character design & scene construction</span>
+                        <span class="lang-ja" style="display:none">キャラクターデザインとシーン構築</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-500 mr-2 mt-1"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="lang-zh">成本降低70%，效率提升3倍</span>
+                        <span class="lang-en" style="display:none">70% cost reduction, 3x efficiency boost</span>
+                        <span class="lang-ja" style="display:none">コスト70%削減、効率3倍向上</span>
+                    </li>
+                </ul>
+                <a href="ai-drama.html" class="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-all">
+                    <span class="lang-zh">了解短剧制作</span>
+                    <span class="lang-en" style="display:none">Learn About Drama Production</span>
+                    <span class="lang-ja" style="display:none">ドラマ制作について</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- 分割线 -->
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="border-t border-gray-100 dark:border-gray-800"></div>
+</div>
+
+<!-- 信任与资质 -->
+<section id="trust" class="py-12 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="lang-zh">信任与资质</span>
+                <span class="lang-en" style="display:none">Trust & Credentials</span>
+            </h2>
+            <div class="h-1 w-24 bg-blue-600 mx-auto"></div>
+        </div>
+
+        <!-- 客户Logo墙（占位） -->
+        <div class="mb-10 placeholder-hidden">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">服务与合作</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+                <div class="h-14 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md flex items-center justify-center text-sm text-gray-500">Client A</div>
+                <div class="h-14 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md flex items-center justify-center text-sm text-gray-500">Client B</div>
+                <div class="h-14 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md flex items-center justify-center text-sm text-gray-500">Client C</div>
+                <div class="h-14 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md flex items-center justify-center text-sm text-gray-500">Client D</div>
+            </div>
+        </div>
+
+        <!-- 媒体报道（占位） -->
+        <div class="mb-10 placeholder-hidden">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">媒体与报道</h3>
+            <ul class="list-disc pl-6 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <li>媒体报道占位：标题示例A（待替换）</li>
+                <li>媒体报道占位：标题示例B（待替换）</li>
+                <li>媒体报道占位：标题示例C（待替换）</li>
+            </ul>
+        </div>
+
+        <!-- 认证与资质（占位） -->
+        <div class="mb-2 placeholder-hidden">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">认证与资质</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-5 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">信息安全规范（占位）</p>
+                    <p class="text-xs text-gray-500 mt-1">说明：待替换为实际证书/编号</p>
+                </div>
+                <div class="p-5 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">服务质量体系（占位）</p>
+                    <p class="text-xs text-gray-500 mt-1">说明：待替换为实际证书/编号</p>
+                </div>
+                <div class="p-5 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-md">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">专业能力背书（占位）</p>
+                    <p class="text-xs text-gray-500 mt-1">说明：待替换为实际证书/编号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 线下活动展示 -->
+<section id="offline-activities" class="py-12 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="lang-zh">线下培训活动</span>
+                <span class="lang-en" style="display:none">Offline Training Activities</span>
+                <span class="lang-ja" style="display:none">オフライン研修活動</span>
+            </h2>
+            <div class="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                <span class="lang-zh">我们定期举办线下AI培训活动，为企业和个人提供面对面的专业指导和实践机会</span>
+                <span class="lang-en" style="display:none">We regularly host offline AI training activities, providing face-to-face professional guidance and practical opportunities</span>
+                <span class="lang-ja" style="display:none">定期的にオフラインAI研修活動を開催し、企業や個人に対面での専門指導と実践機会を提供しています</span>
+            </p>
+        </div>
+
+        <!-- 活动特色 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users text-blue-600 dark:text-blue-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 21-3-3m0 0a5 5 0 0 0-7-7 5 5 0 0 0 7 7z"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">
+                    <span class="lang-zh">面对面指导</span>
+                    <span class="lang-en" style="display:none">Face-to-Face Guidance</span>
+                    <span class="lang-ja" style="display:none">対面指導</span>
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    <span class="lang-zh">专业讲师现场答疑，个性化解决方案</span>
+                    <span class="lang-en" style="display:none">Professional instructors provide on-site Q&A and personalized solutions</span>
+                    <span class="lang-ja" style="display:none">専門講師による現場での質疑応答と個別ソリューション</span>
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop text-green-600 dark:text-green-400"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">
+                    <span class="lang-zh">实操演练</span>
+                    <span class="lang-en" style="display:none">Hands-on Practice</span>
+                    <span class="lang-ja" style="display:none">実践演習</span>
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    <span class="lang-zh">真实项目案例，边学边练，即学即用</span>
+                    <span class="lang-en" style="display:none">Real project cases, learn while practicing, immediate application</span>
+                    <span class="lang-ja" style="display:none">実際のプロジェクト事例で学習しながら練習し、即座に応用</span>
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network text-purple-600 dark:text-purple-400"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">
+                    <span class="lang-zh">行业交流</span>
+                    <span class="lang-en" style="display:none">Industry Networking</span>
+                    <span class="lang-ja" style="display:none">業界交流</span>
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                    <span class="lang-zh">同行业学员互动，拓展人脉资源</span>
+                    <span class="lang-en" style="display:none">Interact with peers from the same industry, expand networking</span>
+                    <span class="lang-ja" style="display:none">同業界の受講者との交流、人脈拡大</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 活动图片展示 -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-center mb-8">
+                <span class="lang-zh">活动现场回顾</span>
+                <span class="lang-en" style="display:none">Activity Highlights</span>
+                <span class="lang-ja" style="display:none">活動現場の振り返り</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img src="2025培训/3381740230814_.pic_hd.jpg" alt="培训现场1" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">
+                                <span class="lang-zh">AI应用实战培训</span>
+                                <span class="lang-en" style="display:none">AI Application Training</span>
+                                <span class="lang-ja" style="display:none">AI応用実戦研修</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img src="2025培训/3391740230815_.pic_hd.jpg" alt="培训现场2" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">
+                                <span class="lang-zh">学员互动交流</span>
+                                <span class="lang-en" style="display:none">Student Interaction</span>
+                                <span class="lang-ja" style="display:none">受講者交流</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img src="2025培训/3411740230818_.pic_hd.jpg" alt="培训现场3" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">
+                                <span class="lang-zh">专家现场指导</span>
+                                <span class="lang-en" style="display:none">Expert Guidance</span>
+                                <span class="lang-ja" style="display:none">専門家現場指導</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img src="2025培训/CC8A9696.JPG" alt="培训现场4" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">
+                                <span class="lang-zh">实操演练环节</span>
+                                <span class="lang-en" style="display:none">Practical Exercise</span>
+                                <span class="lang-ja" style="display:none">実践演習セッション</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- 分割线 -->
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="border-t border-gray-100 dark:border-gray-800"></div>
+</div>
+
+
+<!-- 最新资讯 -->
+<section id="news" class="py-16 bg-gradient-to-r from-gray-100 to-blue-50 dark:bg-gray-800/30">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                <span class="lang-zh">最新资讯</span>
+                <span class="lang-en" style="display:none">Latest News</span>
+                <span class="lang-ja" style="display:none">最新ニュース</span>
+            </h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <span class="lang-zh">关注AI行业动态，把握技术发展趋势</span>
+                <span class="lang-en" style="display:none">Stay updated with AI industry trends and technology developments</span>
+                <span class="lang-ja" style="display:none">AI業界の動向と技術発展のトレンドを把握</span>
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <div class="aspect-video md:aspect-square bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <p class="text-sm font-medium">热门资讯</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded text-xs font-medium">热点</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2025-08-12</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight">
+                            <a href="news-ai-drama-market-boom-2024.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                AI漫剧市场爆发：日耗破400万，ROI超1.1，天星AI引领行业变革
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                            2025年AI漫剧市场迎来爆发式增长，字节跳动日耗突破402万，多数ROI达1.1以上。天星AI作为专业AI短剧制作团队，深度解析漫剧行业发展趋势...
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded text-xs">AI漫剧</span>
+                            <span class="px-2 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded text-xs">市场分析</span>
+                            <span class="px-2 py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded text-xs">行业趋势</span>
+                        </div>
+                        <a href="news-ai-drama-market-boom-2024.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm transition-colors">
+                            阅读全文
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="news.html" class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+                    <span class="lang-zh">查看更多资讯</span>
+                    <span class="lang-en" style="display:none">View More News</span>
+                    <span class="lang-ja" style="display:none">もっと見る</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系我们 -->
+<section id="contact" class="py-8 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color: #000000;">
+                <span class="lang-zh">联系我们</span>
+                <span class="lang-en" style="display:none">Contact Us</span>
+            </h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto mb-4"></div>
+            <p class="text-gray-600 leading-relaxed">
+                <span class="lang-zh">欢迎咨询我们的AI技术解决方案与培训服务。</span>
+                <span class="lang-en" style="display:none">Contact us for AI solutions and training services.</span>
+                <span class="lang-ja" style="display:none">AI技術ソリューションや研修サービスについてお気軽にご相談ください。</span>
+            </p>
+        </div>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-700 overflow-hidden shadow-sm">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 p-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+                        <h3 class="text-xl font-medium mb-6">联系方式</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user mt-1 mr-3"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <div>
+                                    <p class="font-medium lang-zh">陈先生</p>
+                                    <p class="font-medium lang-en" style="display:none">Mr. Chen</p>
+                                    <p class="font-medium lang-ja" style="display:none">陳様</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <p>
+                                    <span class="lang-zh">13141305408（备注：AI咨询）</span>
+                                    <span class="lang-en" style="display:none">+86 13141305408 (AI Consulting)</span>
+                                    <span class="lang-ja" style="display:none">13141305408（AI相談）</span>
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe mr-3"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                                <p>
+                                    <span class="lang-zh">allinagi.com.cn</span>
+                                    <span class="lang-en" style="display:none">allinagi.com.cn</span>
+                                    <span class="lang-ja" style="display:none">allinagi.com.cn</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 二维码展示区 -->
+                    <div class="w-full md:w-1/2 p-6 flex flex-col items-center justify-center bg-white dark:bg-gray-900">
+                        <h3 class="text-xl font-medium mb-6 text-gray-800 dark:text-gray-200">
+                            <span class="lang-zh">扫码咨询</span>
+                            <span class="lang-en" style="display:none">Scan to Consult</span>
+                            <span class="lang-ja" style="display:none">QRコードで相談</span>
+                        </h3>
+                        <div class="w-48 h-48 mb-4">
+                            <img src="contact_me_qr.png" alt="客服二维码" class="w-full h-full">
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-center">
+                            <span class="lang-zh">扫描二维码，获取更多AI技术咨询服务</span>
+                            <span class="lang-en" style="display:none">Scan the QR code for more AI consulting services</span>
+                            <span class="lang-ja" style="display:none">QRコードをスキャンして、より多くのAIコンサルティングサービスを入手できます。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-center items-center text-center">
+            <div class="mb-2 md:mb-0">
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    <span class="lang-zh">© 北京天娇星辰文化传媒有限公司 2025 版权所有</span>
+                    <span class="lang-en" style="display:none">© Beijing Tianjiao Xingchen Media Co., Ltd. 2025 All Rights Reserved</span>
+                    <span class="lang-ja" style="display:none">© 北京天娇星辰文化メディア有限公司 2025 全著作権所有</span>
+                </p>
+                <p class='text-sm text-gray-500 dark:text-gray-500 mt-1 flex flex-wrap justify-center items-center gap-x-2'>
+            <span class='inline-flex items-center'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='mr-1 text-blue-500'><rect x='3' y='4' width='18' height='16' rx='2'/><path d='M16 2v4'/><path d='M8 2v4'/></svg>
+                <a href='https://beian.miit.gov.cn/#/Integrated/index' target='_blank' class='hover:text-blue-500 transition-colors ml-1'>京ICP备2024041236号-1</a>
+                <span class="lang-ja" style="display:none">京ICP备2024041236号-1</span>
+            </span>
+                    <span class='mx-2'>|</span>
+                    <span class='inline-flex items-center'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='16' height="16" viewBox='0 0 24 24" fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='mr-1 text-blue-500'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10'/><path d='m9 12 2 2 4-4'/></svg>
+                        <a href='https://beian.mps.gov.cn/#/query/webSearch' target='_blank' class='hover:text-blue-500 transition-colors ml-1'>京公网安备11010502054460号</a>
+                <span class="lang-ja" style="display:none">京公网安备11010502054460号</span>
+            </span>
+                </p>
+            </div>
+            <!-- 社交媒体按钮已移除 -->
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    document.getElementById('lang-select').onchange = function () {
+        var lang = this.value;
+        var zh = document.querySelectorAll('.lang-zh');
+        var en = document.querySelectorAll('.lang-en');
+        var ja = document.querySelectorAll('.lang-ja');
+        zh.forEach(e => e.style.display = lang === 'zh' ? '' : 'none');
+        en.forEach(e => e.style.display = lang === 'en' ? '' : 'none');
+        ja.forEach(e => e.style.display = lang === 'ja' ? '' : 'none');
+    };
+</script>
+</body>
+</html>
